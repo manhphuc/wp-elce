@@ -8,7 +8,7 @@
 
 use \Yivic\WpPlugin\Elce\Elce;
 
-//wp_enqueue_style('elce_admin', Elce::plugin_dir_url() . '/assets/dist/css/admin.css');
+wp_enqueue_style('elce_admin', Elce::plugin_dir_url() . '/assets/dist/css/admin.css');
 ?>
 <div class="options">
     <div class="options_header">
