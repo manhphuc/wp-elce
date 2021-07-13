@@ -1,0 +1,21 @@
+{
+  "name": "yivic/yivic-elce",
+  "description": "An Yivic's plugin. Easy Live Chat Express (Integrated many chat icons)",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Phuc Nguyen",
+      "email": "manhphucofficial@yahoo.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yivic\\WpPlugin\\Elce\\Base\\": "src/base",
+      "Yivic\\WpPlugin\\Elce\\": "src"
+    }
+  },
+  "minimum-stability": "stable"
+}
