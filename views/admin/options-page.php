@@ -64,31 +64,21 @@ wp_enqueue_script( 'elce_admin_script', Elce::plugin_dir_url() . 'assets/dist/js
 
                         <tr valign="top">
                             <th scope="row">
-                                <label for="viber_app_number"><?= __( 'Viber', Elce::text_domain() ) ?></label>
+                                <label for="messenger_app_link"><?= __( 'Messenger', Elce::text_domain() ) ?></label>
                             </th>
                             <td>
-                                <input placeholder="0123 456 789" id="viber_app_number" class="standard-input" type="text" name="elce[viber_app_number]"
-                                       value="<?php echo $options['viber_app_number']; ?>"/>
+                                <input placeholder="fb_id" id="messenger_app_link" class="standard-input" type="text" name="elce[messenger_app_link]"
+                                       value="<?php echo $options['messenger_app_link']; ?>"/>
                             </td>
                         </tr>
 
-                        <tr valign="top">
+                        <tr valign="top" style=" border-bottom: 1px dashed #bfbfbf; ">
                             <th scope="row">
                                 <label for="contact_app_link"><?= __( 'Contact link', Elce::text_domain() ) ?></label>
                             </th>
                             <td>
                                 <input placeholder="/contact/" id="contact_app_link" class="standard-input" type="text" name="elce[contact_app_link]"
                                        value="<?php echo $options['contact_app_link']; ?>"/>
-                            </td>
-                        </tr>
-
-                        <tr valign="top" style=" border-bottom: 1px dashed #bfbfbf; ">
-                            <th scope="row">
-                                <label for="contact_link_app_color"><?= __( 'Color', Elce::text_domain() ) ?></label>
-                            </th>
-                            <td>
-                                <input id="contact_link_app_color" class="my-color-field" type="text" name="elce[contact_link_app_color]"
-                                       value="<?php echo $options['contact_link_app_color']; ?>"/>
                             </td>
                         </tr>
                     </table>

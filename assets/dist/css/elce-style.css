@@ -97,3 +97,30 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+/* ZALO */
+#elce-zalo .elce-phone-circle-fill {
+    box-shadow: 0 0 0 0 #2196f3;
+    background-color: rgba(33, 150, 243, 0.7);
+}
+#elce-zalo .elce-phone-img-circle {
+    background-color: #2196F3;
+}
+
+/* Messenger */
+#elce-messenger .elce-phone-circle-fill {
+    box-shadow: 0 0 0 0 #714497;
+    background-color: rgba(113, 68, 151, 0.8);
+}
+#elce-messenger .elce-phone-img-circle {
+    background-color: #714497;
+}
+/* Contact */
+#elce-contact .elce-phone-circle-fill {
+    opacity: 0.7;
+    box-shadow: 0 0 0 0 #79ba2a;
+    background-color: #79ba2a;
+}
+#elce-contact .elce-phone-img-circle {
+    background-color: #79ba2a;
+}

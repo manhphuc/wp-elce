@@ -39,13 +39,60 @@ class Main extends BaseObject {
      */
     public static function get_contact_number_box() {
         $options = Elce::instance()->options;
-        echo '<pre>';
-        print_r($options);
-        echo '</pre>';
-//        die("die");
-        $elcePhone = $options['phone_app_number'] ? $options['phone_app_number'] : '';
         $result  = '';
         $result .= '<div class="wp-elce">';
+
+        // Contact section
+        $elceContact          = $options['contact_app_link'] ? $options['contact_app_link'] : '';
+        if( !empty( $elceContact ) ) :
+            $result .= '   <div id="elce-contact" class="elce-contact">';
+            $result .= '        <div class="elce-phone">';
+            $result .= '            <div class="elce-phone-circle-fill"></div>';
+            $result .= '            <div class="elce-phone-img-circle">';
+            $result .= '                <a target="_blank" href="'.$elceContact.'">';
+            $result .= '                    <img src="'.Elce::plugin_dir_url().'assets/src/images/contact.png">';
+            $result .= '                </a>';
+            $result .= '            </div>';
+            $result .= '        </div>';
+            $result .= '   </div>';
+        endif;
+        // End Contact section
+
+        // Messenger section
+        $elceMessenger          = $options['messenger_app_link'] ? $options['messenger_app_link'] : '';
+        if( !empty( $elceMessenger ) ) :
+            $result .= '   <div id="elce-messenger" class="elce-contact">';
+            $result .= '        <div class="elce-phone">';
+            $result .= '            <div class="elce-phone-circle-fill"></div>';
+            $result .= '            <div class="elce-phone-img-circle">';
+            $result .= '                <a target="_blank" href="http://m.me/'.$elceMessenger.'">';
+            $result .= '                    <img src="'.Elce::plugin_dir_url().'assets/src/images/messenger.png">';
+            $result .= '                </a>';
+            $result .= '            </div>';
+            $result .= '        </div>';
+            $result .= '   </div>';
+        endif;
+        // End messenger section
+
+        // Zalo section
+        $elceZalo       = $options['zalo_app_number'] ? $options['zalo_app_number'] : '';
+        $getElceZalo    = preg_replace( '/\D/', '', $elceZalo);
+        if( !empty( $elceZalo ) ) :
+            $result .= '   <div id="elce-zalo" class="elce-contact">';
+            $result .= '        <div class="elce-phone">';
+            $result .= '            <div class="elce-phone-circle-fill"></div>';
+            $result .= '            <div class="elce-phone-img-circle">';
+            $result .= '                <a target="_blank" href="https://zalo.me/'.$getElceZalo.'">';
+            $result .= '                    <img src="'.Elce::plugin_dir_url().'assets/src/images/zalo.png">';
+            $result .= '                </a>';
+            $result .= '            </div>';
+            $result .= '        </div>';
+            $result .= '   </div>';
+        endif;
+        // End zalo section
+
+        // Phone section
+        $elcePhone = $options['phone_app_number'] ? $options['phone_app_number'] : '';
         if( !empty( $elcePhone ) ) :
         $result .= '   <div id="elce-phone" class="elce-contact">';
         $result .= '        <div class="elce-phone">';
@@ -77,8 +124,41 @@ class Main extends BaseObject {
                 }
             </style>
         ';
-
         endif;
+        // End phone section
+
+        // Check select location
+        if( $options['location_display'] == 'right' ) :
+        $result .= '
+            <style>
+                .wp-elce {right:0;}
+			    .phone-bar a {left: auto;right: 30px;padding: 8px 55px 7px 15px;}
+            </style>
+        ';
+        endif;
+
+        // Check hide device mobile
+        if( $options['hide_app_mobile'] == true ) :
+            $result .= '
+            <style>
+                @media(max-width: 736px){
+                    .wp-elce {display: none;}
+                }
+            </style>
+        ';
+        endif;
+
+        // Check hide device desktop
+        if( $options['hide_app_desktop'] == true ) :
+            $result .= '
+            <style>
+                @media(min-width: 736px){
+				    .wp-elce {display: none;}
+			    }
+            </style>
+        ';
+        endif;
+
         $result .= '</div>';
         echo $result;
     }
