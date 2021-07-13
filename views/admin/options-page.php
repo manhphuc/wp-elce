@@ -93,14 +93,42 @@ wp_enqueue_script( 'elce_admin_script', Elce::plugin_dir_url() . 'assets/dist/js
                         </tr>
                     </table>
 
-                    <h3 class="title"><?= __( 'Main Settings', Elce::text_domain() ) ?></h3>
-                    <table class="form-table">
-                        <small><?= __( 'Please come back later!', Elce::text_domain() ) ?></small>
-                    </table>
-
                     <h3 class="title"><?= __( 'Display Settings', Elce::text_domain() ) ?></h3>
                     <table class="form-table">
-                        <small><?= __( 'Please come back later!', Elce::text_domain() ) ?></small>
+
+                        <tr valign="top">
+                            <th scope="row"><label
+                                        for="location_display"><?= __( 'Location', Elce::text_domain() ) ?></label></th>
+                            <td>
+                                <select id="location_display" name="elce[location_display]">
+                                    <option value="left"<?php if ( $options['location_display'] == 'left' ) {
+                                        echo ' selected="selected"';
+                                    } ?>>
+                                        <?= __( 'Left', Elce::text_domain() ) ?>
+                                    </option>
+                                    <option value="right"<?php if ( $options['location_display'] == 'right' ) {
+                                        echo ' selected="selected"';
+                                    } ?>>
+                                        <?= __( 'Right', Elce::text_domain() ) ?>
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr valign="top">
+                            <th scope="row"><label for="hide_on_label">Hide on</label></th>
+                            <td>
+                                <input id="hide_app_desktop" name="elce[hide_app_desktop]" type="checkbox"
+                                       value="1" <?php checked( 1, $options['hide_app_desktop'] ); ?> />
+                                <small><?= __( 'Button will not be displayed on desktop sized devices.', Elce::text_domain() ) ?></small>
+                            </td>
+                            <td>
+                                <input id="hide_app_mobile" name="elce[hide_app_mobile]" type="checkbox"
+                                       value="1" <?php checked( 1, $options['hide_app_mobile'] ); ?> />
+                                <small><?= __( 'Button will not be displayed on small devices like on mobile.', Elce::text_domain() ) ?></small>
+                            </td>
+                        </tr>
+
                     </table>
 
                     <p class="submit">
