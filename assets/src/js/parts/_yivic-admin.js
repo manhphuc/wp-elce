@@ -1,8 +1,4 @@
-document.addEventListener( 'DOMContentLoaded', function(){
-    var btn = document.getElementById('yivic-javascript');
-    if( btn ) {
-        btn.onclick = function () {
-            console.log('Hello World!');
-        }
-    }
-}, false )
+// js admin color picker
+jQuery(document).ready(function($){
+    $('.my-color-field').wpColorPicker();
+});

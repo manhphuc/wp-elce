@@ -7,7 +7,6 @@
 
 namespace Yivic\WpPlugin\Elce\Base;
 
-
 use Yivic\WpPlugin\Elce\Elce;
 
 class Admin extends BaseObject {
@@ -19,8 +18,7 @@ class Admin extends BaseObject {
 	 * @param null $config
 	 */
 	public function __construct( $config = null ) {
-		add_action( 'admin_init', [ $this, 'admin_init' ] );
-		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+        self::init();
 	}
 
 	/**
@@ -30,6 +28,17 @@ class Admin extends BaseObject {
 	function admin_init() {
 		register_setting( Elce::OPTION_GROUP_NAME, Elce::OPTION_KEY );
 	}
+
+    public function init() {
+        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_color_picker' ] );
+        add_action( 'admin_init', [ $this, 'admin_init' ] );
+        add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+    }
+
+    // add scripts to frontend
+    function enqueue_color_picker() {
+        wp_enqueue_style( 'wp-color-picker' );
+    }
 
 	/**
 	 * Hook to attach to admin_menu action
