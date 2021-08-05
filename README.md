@@ -2,8 +2,8 @@
 Contributors: manhphucofficial@yahoo.com
 License: GPLv3, MIT
 Tags: chat, live chat, button live chat
-Requires at least: 4.0
-Tested up to: 4.9.4
+Requires at least: 5.0
+Tested up to: 5.8
 Stable tag: 1.0.0
 
 ++ Description ++
