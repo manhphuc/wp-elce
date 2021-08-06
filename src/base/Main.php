@@ -160,6 +160,6 @@ class Main extends BaseObject {
         endif;
 
         $result .= '</div>';
-        echo $result;
+        _e( $result, Elce::text_domain() );
     }
 }

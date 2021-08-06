@@ -77,7 +77,8 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	try {
 		WP_CLI::add_command( 'elce', '\\Sb\\Elce\\WpCliCommand' );
 	} catch (Exception $e) {
-		echo 'WP_CLI error:'.$e->getMessage();
+        esc_html_e( 'WP_CLI error:'.$e->getMessage(), Elce::text_domain() );
+		//echo 'WP_CLI error:'.$e->getMessage();
 		exit();
 	}
 }
