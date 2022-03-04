@@ -3,7 +3,7 @@
 Plugin Name:    Yivic - Easy Live Chat Express
 Plugin URI:     https://github.com/manhphuc/wp-elce
 Description:    Adding chat buttons is faster, more convenient and easier.
-Version:        1.0.0
+Version:        1.0.1
 Author:         Yivic
 Author URI:     https://www.yivic.com/
 
