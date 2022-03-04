@@ -47,8 +47,11 @@ wp_enqueue_script( 'elce_admin_script', Elce::plugin_dir_url() . 'assets/dist/js
                         <tr valign="top" style=" border-bottom: 1px dashed #bfbfbf; ">
                             <th scope="row"><label for="phone_app_bar"><?php esc_attr_e( 'Hotline bar (show/hide)', Elce::text_domain() ) ?></label></th>
                             <td>
+                                <?php if ( ! isset( $options['phone_app_bar'] ) ) {
+                                    $options['phone_app_bar'] = 0;
+                                } ?>
                                 <input id="phone_app_bar" name="elce[phone_app_bar]" type="checkbox"
-                                       value="1" <?php checked( 1, $options['phone_app_bar'] ); ?> />
+                                       value="1" <?php checked( $options['phone_app_bar'], 1 ); ?> />
                                 <small><?php esc_attr_e( 'Show phone number next to button or hide.', Elce::text_domain() ) ?></small>
                             </td>
                         </tr>
@@ -109,13 +112,19 @@ wp_enqueue_script( 'elce_admin_script', Elce::plugin_dir_url() . 'assets/dist/js
                         <tr valign="top">
                             <th scope="row"><label for="hide_on_label">Hide on</label></th>
                             <td>
+                                <?php if ( ! isset( $options['hide_app_desktop'] ) ) {
+                                    $options['hide_app_desktop'] = 0;
+                                } ?>
                                 <input id="hide_app_desktop" name="elce[hide_app_desktop]" type="checkbox"
-                                       value="1" <?php checked( 1, $options['hide_app_desktop'] ); ?> />
+                                       value="1" <?php checked( $options['hide_app_desktop'], 1 ); ?> />
                                 <small><?php esc_attr_e( 'Button will not be displayed on desktop sized devices.', Elce::text_domain() ) ?></small>
                             </td>
                             <td>
+                                <?php if ( ! isset( $options['hide_app_mobile'] ) ) {
+                                    $options['hide_app_mobile'] = 0;
+                                } ?>
                                 <input id="hide_app_mobile" name="elce[hide_app_mobile]" type="checkbox"
-                                       value="1" <?php checked( 1, $options['hide_app_mobile'] ); ?> />
+                                       value="1" <?php checked( $options['hide_app_mobile'], 1 ); ?> />
                                 <small><?php esc_attr_e( 'Button will not be displayed on small devices like on mobile.', Elce::text_domain() ) ?></small>
                             </td>
                         </tr>
