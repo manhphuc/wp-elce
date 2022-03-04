@@ -104,7 +104,7 @@ class Main extends BaseObject {
         $result .= '            </div>';
         $result .= '        </div>';
         $result .= '   </div>';
-        if( $options['phone_app_bar'] == true ) {
+        if( !empty( $options['phone_app_bar'] ) == true ) {
             $result .= '   <div class="phone-bar phone-bar-n">';
             $result .= '        <div class="phone-bar phone-bar-n">';
             $result .= '            <a href="tel:'.$elcePhone.'">';
@@ -138,7 +138,7 @@ class Main extends BaseObject {
         endif;
 
         // Check hide device mobile
-        if( $options['hide_app_mobile'] == true ) :
+        if( !empty( $options['hide_app_mobile'] ) == true ) :
             $result .= '
             <style>
                 @media(max-width: 736px){
@@ -149,7 +149,7 @@ class Main extends BaseObject {
         endif;
 
         // Check hide device desktop
-        if( $options['hide_app_desktop'] == true ) :
+        if( !empty( $options['hide_app_desktop'] ) == true ) :
             $result .= '
             <style>
                 @media(min-width: 736px){
