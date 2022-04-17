@@ -13,7 +13,7 @@ wp_enqueue_script( 'elce_admin_script', Elce::plugin_dir_url() . 'assets/dist/js
 ?>
 <div class="options">
     <div class="options_header">
-        <h1><?php __( 'Easy Live Chat Express', Elce::text_domain() ) ?></h1>
+        <h1><?php echo __( 'Easy Live Chat Express', Elce::text_domain() ) ?></h1>
     </div>
 
     <div class="options">
