@@ -1,6 +1,7 @@
 .wp-elce {
     position: fixed;
     bottom: 0;
+    left: 0;
     z-index: 99999;
 }
 .wp-elce #elce-phone {
@@ -83,6 +84,16 @@
     transform-origin: 50% 50%;
     -webkit-animuiion: zoom 1.3s infinite;
     animation: zoom 1.3s infinite;
+}
+.phone-bar.phone-bar-n {
+    position: relative;
+    visibility: visible;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transition: visibility .5s;
+    display: block;
 }
 .phone-bar a {
     position: fixed;
